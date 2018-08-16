@@ -1,4 +1,6 @@
 #include <string>
+#include <cstdlib>
+#include <cmath>
 
 #define CLEAN true;
 #define DIRTY false;

@@ -1,8 +1,4 @@
 #include "piso.h"
-#include <cstdlib>
-#include <cmath>
-
-
 
 piso::
 piso(unsigned int h, unsigned int w)
