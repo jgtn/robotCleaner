@@ -5,7 +5,7 @@
 #define CLEAN true;
 #define DIRTY false;
 
-typedef enum error{NO_ERR,MEM_ERR} errtype_t;
+typedef enum error{NO_ERR,MEM_ERR,ALLEGRO_ERR} errtype_t;
 
 typedef struct
 {
