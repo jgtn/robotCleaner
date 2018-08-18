@@ -98,3 +98,9 @@ showRobot(double x, double y)
 	}
 }
 
+void graphics::
+showTime(unsigned int time)
+{
+	/*dibujar CRITERIO?????*/
+}
+
