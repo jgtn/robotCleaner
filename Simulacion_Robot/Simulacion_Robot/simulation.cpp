@@ -1,5 +1,6 @@
 #include "simulation.h"
 
+using namespace std;
 
 simulation::
 simulation(unsigned int robotNum, string modeNum, unsigned int w, unsigned int h):p(h,w) // llamo al contructor de piso
@@ -16,7 +17,7 @@ simulation(unsigned int robotNum, string modeNum, unsigned int w, unsigned int h
 	else
 	{
 		error.err_code = MEM_ERR;
-		error.description = "Error en la alocación de memoria!";
+		error.description = "Error en la alocación de memoria!\n";
 	}
 
 }

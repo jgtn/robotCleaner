@@ -1,11 +1,18 @@
+#ifndef PISO
+#define PISO
+
 #include <string>
 #include <cstdlib>
 #include <cmath>
 
-#define CLEAN true;
-#define DIRTY false;
+#define CLEAN true
+#define DIRTY false
+#define MAXWIDTH 70
+#define MAXHEIGHT 100
 
 typedef enum error{NO_ERR,MEM_ERR,ALLEGRO_ERR} errtype_t;
+
+using namespace std; // para que funcione string??
 
 typedef struct
 {
@@ -35,3 +42,5 @@ public:
 	unsigned int getHeight(void);
 	unsigned int getWidth(void);
 };
+
+#endif //piso

@@ -1,5 +1,10 @@
+#ifndef SIMULATION
+#define SIMULATION
+
 #include <string>
 #include "piso.h" // para los errores, por ahi se puede cambiar
+#include "graphics.h"
+#include "robots.h"
 
 typedef int robot_t; // definición provisoria
 
@@ -14,7 +19,7 @@ class simulation
 	unsigned int robotCount;
 	robot* robots;
 	void step(void);
-	graphic graph;
+	graphics graph;
 	piso p; // objeto piso
 public:
 	simulation(unsigned int robotNum, string modeNum, unsigned int w, unsigned int h);
@@ -26,3 +31,4 @@ public:
 	error_t getError();
 
 };
+#endif // simulation
