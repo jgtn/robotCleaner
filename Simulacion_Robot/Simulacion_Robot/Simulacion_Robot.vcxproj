@@ -116,12 +116,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="graphics.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="piso.cpp" />
+    <ClCompile Include="robots.cpp" />
     <ClCompile Include="simulation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="graphics.h" />
     <ClInclude Include="piso.h" />
+    <ClInclude Include="robots.h" />
     <ClInclude Include="simulation.h" />
   </ItemGroup>
   <ItemGroup>

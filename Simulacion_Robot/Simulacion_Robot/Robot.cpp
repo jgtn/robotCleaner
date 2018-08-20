@@ -1,9 +1,10 @@
 #include "Robot.h"
 
-void Robot ::
+void robot ::
 initRobot(uint n,uint Hcount, uint Wcount)
 {
-	hCount = Hcount; wCount = Wcount;
+	hCount = Hcount; 
+	wCount = Wcount;
 	ptorobots = (robotType*) malloc(n * sizeof(robotType)); 
 	if (ptorobots != NULL)
 	{
@@ -18,14 +19,14 @@ initRobot(uint n,uint Hcount, uint Wcount)
 	}
 	else
 	{
-		error.tipoDeError = ERROR_MEM;
-		error.descrip = "Error en la alocación de memoria!";
+		error.err_code = MEM_ERR;
+		error.description = "Error en la alocación de memoria!\n";
 	}
 	
 
 }
 
-void Robot::
+void robot::
 moveRobot(){
 	double dx =roboto.position.x + sin(roboto.direction);
 	double dy = roboto.position.y - cos(roboto.direction);
@@ -39,7 +40,7 @@ moveRobot(){
 		roboto.direction = ((angle*PI / 180));
 }
 
-posT Robot::
+posT robot::
 getRobotPos(uint i)
 {
 	pos.x = ptorobots[i].position.x;
@@ -47,7 +48,7 @@ getRobotPos(uint i)
 	return pos;
 }
 
-void Robot::
+void robot::
 destRobot()
 {
 	free(ptorobots);

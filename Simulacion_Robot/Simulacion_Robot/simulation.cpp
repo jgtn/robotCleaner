@@ -9,9 +9,15 @@ simulation(unsigned int robotNum, string modeNum, unsigned int w, unsigned int h
 	mode = modeNum;
 	robotCount = robotNum;
 	robots = new robot[robotNum];
+
 	if (robots != NULL)
 	{
 		error.err_code = NO_ERR;
+
+		for (int i = 0; i < robotNum; i++)
+		{
+			robots[i].initRobot(h, w); // inicializo los robots
+		}
 	}
 
 	else
@@ -37,13 +43,13 @@ getRobotCount(void)
 void simulation::
 destroy(void)
 {
-	delete robots[];
+	delete robots;
 }
 
 error_t simulation::
 getError(void)
 {
-	return error;
+	return error; // con [] no funciona
 }
 
 string simulation::
@@ -53,7 +59,18 @@ getMode(void)
 }
 
 void simulation::
+clearTickCount(void)
+{
+	tickCount = 0;
+}
+
+void simulation::
 step(void)
 {
-
+	for (int i = 0 ; i < robotCount ; i++) // se considera que el robot en su posición inicial NO limpia la baldosa sobre la que está posicionado
+	{
+		robots[i].moveRobot(); // muevo robots
+		p.cleanTile(robots[i].getRobotPos()); // limpio las baldosas sobre las que están los robots
+		tickCount++; // incremento contador de tiempo
+	}
 }

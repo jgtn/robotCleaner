@@ -1,6 +1,7 @@
 #include "piso.h"
 
 
+
 piso::
 piso(unsigned int h, unsigned int w)
 {
@@ -21,7 +22,7 @@ piso(unsigned int h, unsigned int w)
 	else
 	{
 		error.err_code = MEM_ERR;
-		error.description = "Error en la alocación de memoria!"
+		error.description = "Error en la alocación de memoria!\n";
 	}
 
 }
@@ -60,7 +61,7 @@ cleanTile(unsigned int x, unsigned int y)
 }
 
 void piso::
-cleanTile(position_t pos)
+cleanTile(robpos_t pos)
 {
 	unsigned int x = floor(pos.x);
 	unsigned int y = floor(pos.y);

@@ -2,11 +2,10 @@
 #define SIMULATION
 
 #include <string>
-#include "piso.h" // para los errores, por ahi se puede cambiar
+#include "piso.h" 
 #include "graphics.h"
 #include "robots.h"
 
-typedef int robot_t; // definición provisoria
 
 using namespace std;
 
@@ -15,17 +14,17 @@ class simulation
 	unsigned int tickCount;
 	error_t error;
 	string mode;
-	// dibujeitor
 	unsigned int robotCount;
 	robot* robots;
 	void step(void);
-	graphics graph;
+	graphics graph; // objeto dibujador
 	piso p; // objeto piso
 public:
 	simulation(unsigned int robotNum, string modeNum, unsigned int w, unsigned int h);
 	string getMode(void);
 	unsigned int simulate(void);
 	unsigned int getTickCount(void);
+	void clearTickCount(void); 
 	unsigned int getRobotCount(void);
 	void destroy(void);
 	error_t getError();

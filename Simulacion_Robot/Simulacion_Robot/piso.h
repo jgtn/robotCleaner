@@ -4,6 +4,7 @@
 #include <string>
 #include <cstdlib>
 #include <cmath>
+#include "robots.h"
 
 #define CLEAN true
 #define DIRTY false
@@ -14,11 +15,11 @@ typedef enum error{NO_ERR,MEM_ERR,ALLEGRO_ERR} errtype_t;
 
 using namespace std; // para que funcione string??
 
-typedef struct
+/*typedef struct
 {
 	unsigned int x;
 	unsigned int y;
-}position_t;
+}position_t;*/
 
 typedef struct
 {
@@ -37,7 +38,7 @@ public:
 	bool isDirty(unsigned int x, unsigned int y);
 	bool isClean(void);
 	void cleanTile(unsigned int x, unsigned int y);
-	void cleanTile(position_t pos);
+	void cleanTile(robpos_t pos);
 	void destroyFloor(void);
 	unsigned int getHeight(void);
 	unsigned int getWidth(void);
