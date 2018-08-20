@@ -3,7 +3,7 @@
 using namespace std;
 
 simulation::
-simulation(unsigned int robotNum, string modeNum, unsigned int w, unsigned int h):p(h,w) // llamo al contructor de piso
+simulation(unsigned int robotNum, string modeNum, unsigned int w, unsigned int h):p(h,w),graph(p.getHeight(),p.getWidth(),robotCount,800,800) // llamo al contructor de piso
 {
 	tickCount = 0;
 	mode = modeNum;
@@ -58,19 +58,14 @@ getMode(void)
 	return mode;
 }
 
-void simulation::
-clearTickCount(void)
-{
-	tickCount = 0;
-}
 
 void simulation::
 step(void)
 {
-	for (int i = 0 ; i < robotCount ; i++) // se considera que el robot en su posición inicial NO limpia la baldosa sobre la que está posicionado
+	for (int i = 0 ; i < robotCount ; i++)
 	{
-		robots[i].moveRobot(); // muevo robots
 		p.cleanTile(robots[i].getRobotPos()); // limpio las baldosas sobre las que están los robots
+		robots[i].moveRobot(); // muevo robots
 		tickCount++; // incremento contador de tiempo
 	}
 }

@@ -1,13 +1,10 @@
 #include "robots.h"
 
-
-#define PI 3.14159265359
-
 void robot::
 initRobot(unsigned int maxh, unsigned int maxw)
 {
 	srand(time_t());
-	position.x = (double) (rand() % maxw); // da doubles??
+	position.x = (double) (rand() % maxw);// cambiar
 	position.y = (double) (rand() % maxh);
 	dir = (double) (rand() % 360);
 	Hcount = maxh;

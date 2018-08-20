@@ -19,12 +19,12 @@ class simulation
 	void step(void);
 	graphics graph; // objeto dibujador
 	piso p; // objeto piso
+
 public:
 	simulation(unsigned int robotNum, string modeNum, unsigned int w, unsigned int h);
 	string getMode(void);
 	unsigned int simulate(void);
 	unsigned int getTickCount(void);
-	void clearTickCount(void); 
 	unsigned int getRobotCount(void);
 	void destroy(void);
 	error_t getError();

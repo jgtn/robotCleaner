@@ -7,6 +7,7 @@
 #include <ctime>
 #include "piso.h"
 
+#define PI 3.14159265359
 typedef struct
 {
 	double x;

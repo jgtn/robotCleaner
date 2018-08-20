@@ -13,18 +13,13 @@
 
 typedef enum error{NO_ERR,MEM_ERR,ALLEGRO_ERR} errtype_t;
 
-using namespace std; // para que funcione string??
+using namespace std;
 
-/*typedef struct
-{
-	unsigned int x;
-	unsigned int y;
-}position_t;*/
 
 typedef struct
 {
 	string description;
-	errtype_t err_code; // agregar typedef de enum ???
+	errtype_t err_code;
 }error_t;
 
 class piso

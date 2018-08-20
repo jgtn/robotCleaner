@@ -92,7 +92,7 @@ showTile(unsigned int x, unsigned int y, bool state)
 void graphics::
 showRobot(double x, double y)
 {
-	if ((x < MAXHEIGHT) && (y < MAXWIDTH)) // valido coordenadas de entrada
+	if ((x < wcount) && (y < hcount)) // valido coordenadas de entrada
 	{
 		/*dibujar CRITERIO?????*/
 	}
