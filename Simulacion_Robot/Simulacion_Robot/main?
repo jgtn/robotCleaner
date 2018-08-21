@@ -1,0 +1,50 @@
+#include "fractals.h"
+#include "allegro_wrapper.h"
+#include "parser_wrapper.h"
+#include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <allegro5/allegro_primitives.h>
+#include <allegro5/allegro.h>
+
+#define FALSE 0
+#define TRUE 1
+#define NSIM 10000
+#define NPROM 1000
+
+int main(int argc, char* argv[]) 
+{
+	//parserstuff
+	
+	if(args.mode=="mode1")
+	{
+		simulation sim(args.robots,args.mode,args.w,args.h);
+		uint tickcount=sim.simulate;
+		display(tickcount);
+		sim destroy();
+	}
+	else 
+	{
+		double tickcount[NSIM];
+		bool listo= FALSE;
+		for(int n=1;(!listo)&&(n<NSIM);n++)
+		{
+			tickcount[n-1]=0.0;
+			for(int i=0;i<NPROM;i++)
+			{
+				simulation sim(n,args.mode,args.w,args.h);
+				tickcount[n-1]+=simulate();
+				sim.destroy();
+			}
+			tickcount[n-1]/=1000.0;
+		
+			//drawbar(tickcount[n-1],n);
+			
+			if (n>1)
+			{
+				listo=(abs(tickcount[n-2]-tickcount[n-1])<=0.1);
+			}
+		}
+		
+	}
+}
